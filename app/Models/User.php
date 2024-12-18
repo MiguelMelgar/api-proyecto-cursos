@@ -117,4 +117,8 @@ class User extends Authenticatable implements JWTSubject
         
         return $query;
     }
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class, 'user_id');
+    }
 }

@@ -15,6 +15,10 @@ use App\Http\Controllers\Tienda\ProfileClientController;
 use App\Http\Controllers\Admin\Course\SeccionGController;
 use App\Http\Controllers\Admin\Course\CategorieController;
 use App\Http\Controllers\Admin\Discount\DiscountController;
+use App\Http\Controllers\ComentarioController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +34,7 @@ use App\Http\Controllers\Admin\Discount\DiscountController;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
 
 Route::group([
     'middleware' => 'api',
@@ -68,6 +73,8 @@ Route::group([
     Route::resource('/coupon',CouponController::class);
 
     Route::resource('/discount',DiscountController::class);
+
+    Route::resource('/comentarios', ComentarioController::class);
 });
 
 Route::group(["prefix" => "ecommerce"],function($router){
@@ -89,3 +96,4 @@ Route::group(["prefix" => "ecommerce"],function($router){
         Route::resource('/review',ReviewController::class);
     });
 });
+
